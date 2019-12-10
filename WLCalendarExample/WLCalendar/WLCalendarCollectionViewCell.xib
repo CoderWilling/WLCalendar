@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k6r-x3-Jx2" customClass="WLCalendarCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc4-mf-0Qt">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="95"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出发" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upK-9Y-bFr">
+                        <rect key="frame" x="0.0" y="75" width="80" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="R7Q-UP-PJW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="upK-9Y-bFr" secondAttribute="trailing" id="0ic-Aj-1vz"/>
+                <constraint firstAttribute="bottom" secondItem="upK-9Y-bFr" secondAttribute="bottom" id="0y1-Rd-dtk"/>
+                <constraint firstItem="Dc4-mf-0Qt" firstAttribute="top" secondItem="k6r-x3-Jx2" secondAttribute="top" id="7HJ-XB-aOZ"/>
+                <constraint firstAttribute="bottom" secondItem="Dc4-mf-0Qt" secondAttribute="bottom" id="ESL-Ym-5jr"/>
+                <constraint firstAttribute="trailing" secondItem="Dc4-mf-0Qt" secondAttribute="trailing" id="hIG-jJ-cr7"/>
+                <constraint firstItem="upK-9Y-bFr" firstAttribute="leading" secondItem="k6r-x3-Jx2" secondAttribute="leading" id="kNU-kb-tCT"/>
+                <constraint firstItem="Dc4-mf-0Qt" firstAttribute="leading" secondItem="k6r-x3-Jx2" secondAttribute="leading" id="lNS-jr-gAv"/>
+            </constraints>
+            <size key="customSize" width="80" height="95"/>
+            <connections>
+                <outlet property="day" destination="Dc4-mf-0Qt" id="Xtu-5M-jeM"/>
+                <outlet property="status" destination="upK-9Y-bFr" id="7rV-1J-is3"/>
+            </connections>
+            <point key="canvasLocation" x="293" y="277.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
