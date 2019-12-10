@@ -1,16 +1,16 @@
 # WLCalendar
-自定义日历<br>
+日历 自定义日历 支持单选日期多选日期，跨月选择  <br>
 ###使用方法<br>
-* 导入头文件：<br>
+* 1.导入头文件：<br>
 #import "WLChooseDateAlertView.h"
-* 声明属性：
+* 2.声明属性：<br>
 @interface ViewController ()
 /** 选择日期弹框 */
 @property (nonatomic, strong) WLChooseDateAlertView *alertDateView;
 @property (nonatomic, strong) UILabel *startTime;
 @property (nonatomic, strong) UILabel *endTime;
 @end
-* 初始化日历：<br>
+* 3.初始化日历：<br>
 -(void)chooseDate:(NSInteger)nub{//1代表单选日期，2代表多选日期
         ac_WeakSelf
         WLChooseDateAlertView *alertView = [[WLChooseDateAlertView alloc]initWithMainColor:[UIColor colorWithRed:30/255.0 green:30/255.0 blue:30/255.0 alpha:1] SelectedColor:[UIColor colorWithRed:252/255.0 green:66/255.0 blue:108/255.0 alpha:1] ChooseType:nub];
