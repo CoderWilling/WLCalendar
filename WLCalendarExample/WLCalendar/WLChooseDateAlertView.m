@@ -239,8 +239,8 @@
      flowLayout.itemSize = CGSizeMake(WLScreenW / 7.0, WLScreenW / 7.0);//item大小
      flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//滚动方向
      flowLayout.headerReferenceSize = CGSizeMake(WLScreenW,60);//header大小
-     flowLayout.minimumLineSpacing = 3;
-     flowLayout.minimumInteritemSpacing = 0;
+//     flowLayout.minimumLineSpacing = 3;
+//     flowLayout.minimumInteritemSpacing = 0;
      _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(headView.frame), WLScreenW, WLScreenH-300-46-55) collectionViewLayout:flowLayout];
      _collectionView.backgroundColor = self.mainColor;
      _collectionView.delegate = self;
@@ -273,12 +273,14 @@
                  if (j < startDay) {//创建空模型
                      WLCalendarItem *item = [[WLCalendarItem alloc]init];
                      item.isHidden = YES;
+                     item = [self judgeWeekend:item Index:j];
                      [monthArr addObject:item];
                  }else{
                      WLCalendarItem *item = [[WLCalendarItem alloc]init];
                      item.nubTitle = j-startDay+1;
                      item.nubYear = year;
                      item.nubMonth = month;
+                     item = [self judgeWeekend:item Index:j];
                      [monthArr addObject:item];
                  }
              }
@@ -293,6 +295,14 @@
  }
 
   
+-(WLCalendarItem *)judgeWeekend:(WLCalendarItem *)item Index:(NSInteger )index{
+    if (index == 0 || index == 6 || index == 7 || index == 13 || index == 14 || index == 20 || index == 21 || index == 27 || index == 28 || index == 34 || index == 35 || index == 41) {
+        item.isWeekend = YES;
+    }
+    return item;
+}
+
+ 
 
  #pragma mark DataSource && Delegate
  // headerView的size
@@ -345,10 +355,26 @@
      if (yearNub == year1 && monthNub <= month1 && item.nubTitle < day) {//设置不可点击样式
           cell.day.textColor = [UIColor grayColor];
      }else{
-         cell.day.textColor = [UIColor whiteColor];
+         if (item.isWeekend) {//周末
+             if (item.isSelect) {
+                 cell.day.textColor = [UIColor whiteColor];
+             }else{
+                 cell.day.textColor = _selectedColor;
+             }
+         }else{
+             cell.day.textColor = [UIColor whiteColor];
+         }
      }
      return cell;
  }
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return 3;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    return 0;
+}
+
 
  // 点击代理方法
  - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

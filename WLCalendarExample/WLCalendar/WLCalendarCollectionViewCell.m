@@ -36,7 +36,7 @@
         self.hidden = NO;
         _day.text = [NSString stringWithFormat:@"%ld",(long)item.nubTitle];
     }
-    
+ 
     if (item.isSelect) {//选中状态
         _day.backgroundColor = _selectedColor;
         if (_chooseType == 1) {//单选日期

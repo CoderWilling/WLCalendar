@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)NSInteger nubYear;
 /*月 */
 @property(nonatomic,assign)NSInteger nubMonth;
+/*周末 */
+@property(nonatomic,assign)BOOL isWeekend;
 @end
 
 NS_ASSUME_NONNULL_END
