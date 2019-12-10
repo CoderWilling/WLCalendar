@@ -4,11 +4,11 @@
 * 1.导入头文件：<br>
 #import "WLChooseDateAlertView.h"
 * 2.声明属性：<br>
-@interface ViewController ()
-/** 选择日期弹框 */
-@property (nonatomic, strong) WLChooseDateAlertView *alertDateView;
-@property (nonatomic, strong) UILabel *startTime;
-@property (nonatomic, strong) UILabel *endTime;
+@interface ViewController ()<br>
+/** 选择日期弹框 */<br>
+@property (nonatomic, strong) WLChooseDateAlertView *alertDateView;<br>
+@property (nonatomic, strong) UILabel *startTime;<br>
+@property (nonatomic, strong) UILabel *endTime;<br>
 @end
 * 3.初始化日历：<br>
 -(void)chooseDate:(NSInteger)nub{//1代表单选日期，2代表多选日期<br>
@@ -25,7 +25,7 @@
         [alertView showHintStr:^{//提示请选择日期
             NSLog(@"请选择日期");
         }];
-        <br>        
+                
         [alertView getTimeData:^(NSArray * _Nonnull firstDay, NSArray * _Nonnull lastDay, NSMutableArray * _Nonnull recordArr) {//选完日期block回调
             [UIView animateWithDuration:0.4 animations:^{
                 weakSelf.alertDateView.center = CGPointMake(WLScreenW/2, WLScreenH*2);<br>
