@@ -22,17 +22,17 @@
             [self.view addSubview:alertView];<br>
         }];<br>
         
-        [alertView showHintStr:^{//提示请选择日期<br>
+        [alertView showHintStr:^{//提示请选择日期
             NSLog(@"请选择日期");
-        }];<br>
-                
+        }];
+        <br>        
         [alertView getTimeData:^(NSArray * _Nonnull firstDay, NSArray * _Nonnull lastDay, NSMutableArray * _Nonnull recordArr) {//选完日期block回调
             [UIView animateWithDuration:0.4 animations:^{
                 weakSelf.alertDateView.center = CGPointMake(WLScreenW/2, WLScreenH*2);<br>
             }];
-            NSString *startStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld", (long)[firstDay[0] integerValue], (long)[firstDay[1] integerValue], (long)[firstDay[2] integerValue]];<br>
-            NSString *endStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld",(long)[lastDay[0] integerValue], (long)[lastDay[1] integerValue], (long)[lastDay[2] integerValue]];<br>
-            weakSelf.startTime.text = [NSString stringWithFormat:@"选好的开始时间:%@",startStr];<br>
-            weakSelf.endTime.text = [NSString stringWithFormat:@"选好的结束时间:%@",endStr];<br>
+            NSString *startStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld", (long)[firstDay[0] integerValue], (long)[firstDay[1] integerValue], (long)[firstDay[2] integerValue]];
+            NSString *endStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld",(long)[lastDay[0] integerValue], (long)[lastDay[1] integerValue], (long)[lastDay[2] integerValue]];
+            weakSelf.startTime.text = [NSString stringWithFormat:@"选好的开始时间:%@",startStr];
+            weakSelf.endTime.text = [NSString stringWithFormat:@"选好的结束时间:%@",endStr];
         }];
 }
