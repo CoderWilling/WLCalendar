@@ -1,5 +1,5 @@
 # WLCalendar
-日历 自定义日历 支持单选日期多选日期，跨月选择  <br>
+自定义日历 <br>
 ## 使用方法<br>
 * 1.导入头文件：<br>
 #import "WLChooseDateAlertView.h"
