@@ -1,6 +1,6 @@
 # WLCalendar
 日历 自定义日历 支持单选日期多选日期，跨月选择  <br>
-### 使用方法<br>
+## 使用方法<br>
 * 1.导入头文件：<br>
 #import "WLChooseDateAlertView.h"
 * 2.声明属性：<br>
@@ -23,16 +23,16 @@
         }];<br>
         
         [alertView showHintStr:^{//提示请选择日期<br>
-            NSLog(@"请选择日期");<br>
+            NSLog(@"请选择日期");
         }];<br>
                 
-        [alertView getTimeData:^(NSArray * _Nonnull firstDay, NSArray * _Nonnull lastDay, NSMutableArray * _Nonnull recordArr) {//选完日期block回调<br>
-            [UIView animateWithDuration:0.4 animations:^{<br>
+        [alertView getTimeData:^(NSArray * _Nonnull firstDay, NSArray * _Nonnull lastDay, NSMutableArray * _Nonnull recordArr) {//选完日期block回调
+            [UIView animateWithDuration:0.4 animations:^{
                 weakSelf.alertDateView.center = CGPointMake(WLScreenW/2, WLScreenH*2);<br>
             }];
             NSString *startStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld", (long)[firstDay[0] integerValue], (long)[firstDay[1] integerValue], (long)[firstDay[2] integerValue]];<br>
             NSString *endStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld",(long)[lastDay[0] integerValue], (long)[lastDay[1] integerValue], (long)[lastDay[2] integerValue]];<br>
             weakSelf.startTime.text = [NSString stringWithFormat:@"选好的开始时间:%@",startStr];<br>
             weakSelf.endTime.text = [NSString stringWithFormat:@"选好的结束时间:%@",endStr];<br>
-        }];<br>
+        }];
 }
